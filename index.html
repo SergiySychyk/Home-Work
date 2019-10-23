@@ -11,13 +11,13 @@
 <body>
     <!-- ЗАДАЧА 0.1(Додоткова) -->
     <!-- <script>
-        let number = parseInt(prompt("Enter number"))
+        let number = prompt("Enter number")
         switch (number) {
-            case 1: document.write("=)")
+            case '1': document.write(`<img src=''>`)
                 break;
-            case 2: document.write("=(")
+            case '2': document.write("=(")
                 break
-            case 3: document.write("=/")
+            case '3': document.write("=/")
             default: document.write(";|")
                 break;
         }
@@ -27,23 +27,21 @@
     <!-- <script>
         let first = parseFloat(prompt("Enter 1st"))
         let second = parseFloat(prompt("Enter 2nd"))
-        let ziro = 0
+     
         if (first > second) {
-            first = 0
-            document.write(`first = 0 , second = ${second}`)
+            first = 0           
         }
         else 
         {
             if (first == second) {
                 first = 1
                 second = 1
-                document.write("first = 1 , second = 1 ")
             }
             else {
-                second = 0
-                document.write(`first = ${first} , second = 0`)
+                second = 0             
             }
         }
+        document.write(`first = ${first} , second = ${second}`)
     </script> -->
 
     <!-- ЗАДАЧА 1.2 -->
@@ -51,14 +49,14 @@
     <!-- <script>
         let price = parseFloat(prompt("Enter price"))
         let money = parseFloat(prompt("How many money u have"))
-        let balance = money - price
+        
         if (money < price) {
             document.write("Sorry , but u don't have enoght money")
         } else {
-            if (balance >= 4) {
+            money = money - price
+            if (money >= 4) 
                 document.write("Thanks!!! Maybe u want buy lotary ticket?")
-        }
-                else
+                        
             document.write(" Thanks for purchasing")
 
         }
@@ -87,7 +85,7 @@
         switch (category) {
             case "A": document.write("Moto")
                 break;
-            case "B": document.write("Car")
+            case 'B': document.write("Car")
                 break
             case "C": document.write("Truck")
                 break
@@ -102,23 +100,21 @@
     <!-- <script>
         let first = parseFloat(prompt("Enter 1st number"))
         let second = parseFloat(prompt("Enter 2nd number"))
-        let suma = first + second
-        let difference = first - second
-        let multiplication = first * second
-        let division = first / second
-        let number = parseInt(prompt("enter nuber operation"))
-        switch (number) {
-            case 1: document.write(`${suma}`)
+
+        let oper = prompt("enter an operation")
+let res
+        switch (oper) {
+            case '+': res=first+second
                 break
-            case 2: document.write(`${difference}`)
+            case '-': res=first-second
                 break
-            case 3: document.write(`${multiplication}`)
+            case '*': res=first*second
                 break
-            case 4: document.write(`${division}`)
-                break
-            default: document.write(`Pls enter number`)
+            case '/': res=first/second
                 break
         }
+document.write(`res=${res}`)
+
     </script> -->
 
     <!-- ЗАДАЧА 3.1 -->
@@ -127,21 +123,39 @@
 
         //3.1.Комп’ютер випадковим чином генерує число.
         //Вгадати, чи наступне число буде більшим чи меншим.
-        var firstNumber = Math.random();
-        var secondNumber = Math.random();
-        if (confirm(`Чи буде друге число більше ніж ${firstNumber}`) && firstNumber < secondNumber) {
+/*                          min+Math.random()*(max-min+1)
+                          2+Math.randon()*6     <-2-7 
+       min+Math.random()*(max-min+1) 
+shift=Math.floor( -1+Math.random()*3)
+*/
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>       
+        let firstNumber = Math.random();
+        let secondNumber = Math.random();
+        const ans=confirm(`Чи буде друге число більше ніж ${firstNumber}`)
+        if ( ans && secondNumber>firstNumber || 
+             ans==false && !(secondNumber>firstNumber) ) {
             document.write("Wizard")
         }
         else {
             document.write("Looooooser"); 
         }
-        document.write('<br/>')
-        document.write("First number = " + firstNumber) 
-        document.write('<br/>')
-        document.write("Second number = " + secondNumber)
-    </script> -->
 
-
+        document.write(`<br/>
+        First number  = ${firstNumber}
+        <br/>
+        Second number = ${secondNumber}`)
+        
+    </script>
 </body>
-
 </html>
